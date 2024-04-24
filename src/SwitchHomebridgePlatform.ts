@@ -102,7 +102,7 @@ export class SwitchHomebridgePlatform implements DynamicPlatformPlugin {
     const switches: Array<IDummySwitch> = [];
     this.config.switches?.forEach(device => {
 
-      if (device.name == undefined || device.webhook == undefined) {
+      if (device.name === undefined || device.webhook === undefined) {
         this.log.error('switch  is missing required keys! Will skip for now', device);
         return; //Continue equivalent
       }
