@@ -1,0 +1,43 @@
+{
+  "pluginAlias": "DummySwitchJub",
+  "pluginType": "platform",
+  "singular": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "apiToken": {
+        "title": "apiToken",
+        "description": "A api token, if required",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      "switches": {
+        "title": "Switches",
+        "description": "Here you can set up dummy switches",
+        "type": "array",
+        "required": true,
+        "items": {
+          "title": "Device setup",
+          "description": "Use this to setup different switches, which will send a audio file to sonos",
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "Name",
+              "description": "Name of the switch",
+              "type": "string",
+              "required": true
+            },
+            "webhook": {
+              "title": "Webhook link",
+              "description": "A POST request will be sent to this url whenever the value changes",
+              "type": "string",
+              "required": true,
+              "default": ""
+            }
+          }
+        }
+      }
+    }
+  }
+}
